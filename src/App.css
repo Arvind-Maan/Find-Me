@@ -13,11 +13,11 @@
   width: 100%;
   height: 10%;
   font-size: large;
-  background-color: grey;
+  background-color: black;
   margin: auto auto;
 }
 
 .logo {
-  color: black;
+  color: white;
   text-decoration: none;
 }
