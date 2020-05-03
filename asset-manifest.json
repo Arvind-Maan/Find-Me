@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Find-Me/static/css/main.748038c0.chunk.css",
+    "main.js": "/Find-Me/static/js/main.ecbc9d04.chunk.js",
+    "main.js.map": "/Find-Me/static/js/main.ecbc9d04.chunk.js.map",
+    "runtime-main.js": "/Find-Me/static/js/runtime-main.7fd5dfb7.js",
+    "runtime-main.js.map": "/Find-Me/static/js/runtime-main.7fd5dfb7.js.map",
+    "static/js/2.a936a332.chunk.js": "/Find-Me/static/js/2.a936a332.chunk.js",
+    "static/js/2.a936a332.chunk.js.map": "/Find-Me/static/js/2.a936a332.chunk.js.map",
+    "index.html": "/Find-Me/index.html",
+    "precache-manifest.9e5dbb582c18ebfe45ac10017a272a0b.js": "/Find-Me/precache-manifest.9e5dbb582c18ebfe45ac10017a272a0b.js",
+    "service-worker.js": "/Find-Me/service-worker.js",
+    "static/css/main.748038c0.chunk.css.map": "/Find-Me/static/css/main.748038c0.chunk.css.map",
+    "static/js/2.a936a332.chunk.js.LICENSE.txt": "/Find-Me/static/js/2.a936a332.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Find-Me/static/media/background.22f2010d.png",
+    "static/media/logo.svg": "/Find-Me/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7fd5dfb7.js",
+    "static/js/2.a936a332.chunk.js",
+    "static/css/main.748038c0.chunk.css",
+    "static/js/main.ecbc9d04.chunk.js"
+  ]
+}
