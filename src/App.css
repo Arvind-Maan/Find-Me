@@ -27,122 +27,103 @@
 	text-decoration: none;
 }
 
-/* SEARCH BAR ANIMATIONS AND ICON*/
-/* 
-Stole this from here:
-https://www.mockplus.com/blog/post/search-bar-design
-https://codepen.io/AlbertFeynman/pen/BPvzWZ
-*/
-.search-container {
-	position: absolute;
-	margin: auto;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	width: 300px;
-	height: 100px;
+.movie-grid-container {
+	position: relative;
+	top: 10%;
+	height: 50%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-items: space-evenly;
 }
-.search-container .input-field {
-	position: absolute;
-	margin: auto;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	width: 80px;
-	height: 80px;
-	background: #3897a8;
-	border-radius: 50%;
-	transition: all 1s;
-	z-index: 4;
-	box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
-}
-.search-container .input-field:hover {
+.movie-container {
+	margin: 30px auto;
+	width: 200px;
+	height: 300px;
+	border-radius: 40px;
+	box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
+		-5px -5px 30px 7px rgba(0, 0, 0, 0.22);
 	cursor: pointer;
+	transition: 0.4s;
+	background-color: #3897a8;
 }
-.search-container .input-field::before {
-	content: "";
+
+.movie-container img {
+	width: inherit;
+	height: inherit;
+	border-radius: 40px;
+	object-fit: cover;
+}
+
+.movie-container div {
+	height: 10%;
+	color: white;
+	text-align: center;
+	font-size: small;
+}
+
+.searchBox {
 	position: absolute;
-	margin: auto;
-	top: 22px;
-	right: 0;
-	bottom: 0;
-	left: 22px;
-	width: 12px;
-	height: 2px;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	background: #3897a8;
+	height: 40px;
+	border-radius: 40px;
+	padding: 10px;
+	z-index: 1;
+}
+
+.searchBox:hover > .searchInput {
+	width: 240px;
+	padding: 0 6px;
+}
+
+.searchBox:hover > .searchButton {
 	background: white;
-	transform: rotate(45deg);
-	transition: all 0.5s;
+	color: #2f3640;
 }
-.search-container .input-field::after {
-	content: "";
-	position: absolute;
-	margin: auto;
-	top: -5px;
-	right: 0;
-	bottom: 0;
-	left: -5px;
-	width: 25px;
-	height: 25px;
-	border-radius: 50%;
-	border: 2px solid white;
-	transition: all 0.5s;
+.searchInput-form {
+	width: inherit;
+	height: inherit;
+	font-size: 16px;
+	line-height: 40px;
+	background-color: inherit;
+	border-width: 0px;
+	border: none;
+	color: white;
+	float: inherit;
 }
-.search-container input {
-	position: absolute;
-	margin: auto;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	width: 50px;
-	height: 50px;
+.searchInput-form:focus {
 	outline: none;
-	border: none;
-	background: #3897a8;
+}
+.searchButton {
 	color: white;
-	text-shadow: 0 0 10px #3897a8;
-	padding: 0 80px 0 20px;
-	border-radius: 30px;
-	box-shadow: 0 0 25px 0 #3897a8, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
-	transition: all 1s;
-	opacity: 0;
-	z-index: 5;
-	font-weight: bolder;
-	letter-spacing: 0.1em;
-}
-.search-container input:hover {
-	cursor: pointer;
-}
-.search-container input:focus {
-	width: 215px;
-	opacity: 1;
-	cursor: text;
-}
-.search-container input:focus ~ .input-field {
-	right: -250px;
+	float: right;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
 	background: #3897a8;
-	z-index: 6;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.4s;
 }
-.search-container input:focus ~ .input-field::before {
-	top: 0;
-	left: 0;
-	width: 25px;
-}
-.search-container input:focus ~ .input-field::after {
-	top: 0;
-	left: 0;
-	width: 25px;
-	height: 2px;
+
+.searchInput {
 	border: none;
-	background: white;
-	border-radius: 0%;
-	transform: rotate(-45deg);
-}
-.search-container input::placeholder {
+	background: none;
+	outline: none;
+	float: left;
+	padding: 0;
 	color: white;
-	opacity: 0.5;
-	font-weight: bolder;
+	transition: 0.4s;
+	width: 0px;
 }
-/* end of search bar*/
+
+@media screen and (max-width: 620px) {
+	.searchBox:hover > .searchInput {
+		width: 150px;
+		padding: 0 6px;
+	}
+}

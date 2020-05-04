@@ -1,9 +1,12 @@
 import React from "react";
+import Movie from "./Movie";
 
 const MovieGrid = (props) => {
 	return (
-		<div className="movie-container">
-			<div className="movie-row"></div>
+		<div className="movie-grid-container">
+			{props.movies.map((movie, index) => {
+				return <Movie key={index} movie={movie} />;
+			})}
 		</div>
 	);
 };
