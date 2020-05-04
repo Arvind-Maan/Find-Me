@@ -2,15 +2,20 @@ import React from "react";
 
 const SearchBox = (props) => {
 	return (
-		<div className="search-container">
-			<form action="" onSubmit={props.handleSubmit}>
+		<div className="searchBox">
+			<form className="searchInput" action="" onSubmit={props.handleSubmit}>
 				<input
+					className="searchInput-form"
 					type="text"
-					placeholder="Search for a movie..."
+					name=""
+					placeholder="Search"
 					onChange={props.handleChange}
+					onSubmit={props.handleSubmit}
 				/>
-				<div className="input-field"></div>
 			</form>
+			<button className="searchButton" href="#" onClick={props.handleSubmit}>
+				<i className="material-icons"> search </i>
+			</button>
 		</div>
 	);
 };
