@@ -11,9 +11,9 @@ const Movie = (props) => {
 				}
 				alt="movie poster"
 			/>
-            <div>
-			    <p> {props.movie.original_title}</p>
-            </div>
+			<div>
+				<p> {props.movie.original_title}</p>
+			</div>
 		</div>
 	);
 };

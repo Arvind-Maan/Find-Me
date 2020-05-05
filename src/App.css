@@ -13,8 +13,8 @@
 	flex-direction: row;
 	justify-content: space-evenly;
 	width: 100%;
-	height: 5%;
-	background-color: #3897a8;
+	height: 10%;
+	background-color: #2f3640;
 }
 
 .nav-wrapper {
@@ -28,46 +28,49 @@
 }
 
 .movie-grid-container {
-	position: relative;
-	top: 10%;
-	height: 50%;
-	width: 100%;
+	margin-top: 10%;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-items: space-evenly;
+	justify-items: center;
 }
+
 .movie-container {
-	margin: 30px auto;
-	width: 200px;
-	height: 300px;
+	background: #2f3640;
 	border-radius: 40px;
-	box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
-		-5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+	display: flex;
+	flex-direction: column;
+	margin: 50px;
+	padding: 25px;
+	width: 13%;
+	height: auto;
 	cursor: pointer;
 	transition: 0.4s;
-	background-color: #3897a8;
+	box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.5),
+		-5px -5px 30px 7px rgba(0, 0, 0, 0.5);
+	text-align: center;
 }
 
 .movie-container img {
-	width: inherit;
-	height: inherit;
-	border-radius: 40px;
+	width: 100%;
+	height: auto;
 	object-fit: cover;
+	z-index: 1;
 }
 
 .movie-container div {
-	height: 10%;
 	color: white;
+
 	text-align: center;
-	font-size: small;
+	font-size: medium;
+	font-weight: bold;
 }
 
 .searchBox {
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%, 50%);
-	background: #3897a8;
+	background: #2f3640;
 	height: 40px;
 	border-radius: 40px;
 	padding: 10px;
@@ -83,6 +86,7 @@
 	background: white;
 	color: #2f3640;
 }
+
 .searchInput-form {
 	width: inherit;
 	height: inherit;
@@ -94,16 +98,19 @@
 	color: white;
 	float: inherit;
 }
+
 .searchInput-form:focus {
 	outline: none;
 }
+
 .searchButton {
 	color: white;
 	float: right;
 	width: 40px;
 	height: 40px;
+	border-color: #2f3640;
 	border-radius: 50%;
-	background: #3897a8;
+	background: #2f3640;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -122,8 +129,48 @@
 }
 
 @media screen and (max-width: 620px) {
+	.movie-container {
+		width: 25%;
+		padding: 5px;
+	}
+
+	.movie-container img {
+		border-radius: 20px;
+		width: 100%;
+		height: 90%;
+	}
 	.searchBox:hover > .searchInput {
 		width: 150px;
 		padding: 0 6px;
 	}
+}
+
+.pagination {
+	text-align: center;
+	padding: 10px;
+}
+
+.pagination li {
+	display: inline-block;
+	list-style: none;
+}
+.pagination li a {
+	display: block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #fff;
+	text-align: center;
+	text-decoration: none;
+	color: #252525;
+	border-radius: 4px;
+	margin: 5px;
+	box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.5);
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+.pagination li a:hover,
+.pagination li:active {
+	color: #fff;
+	background-color: #ff4242;
 }

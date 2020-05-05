@@ -4,6 +4,8 @@ import "./App.css";
 import Nav from "./components/Nav";
 import SearchBox from "./components/SearchBox";
 import MovieGrid from "./components/MovieGrid";
+import Pagination from "./components/Pagination";
+
 class App extends React.Component {
 	constructor() {
 		super();
@@ -12,6 +14,8 @@ class App extends React.Component {
 		this.state = {
 			term: "",
 			movies: [],
+			totalMovies: 0,
+			currPage: 1,
 		};
 	}
 
@@ -21,7 +25,10 @@ class App extends React.Component {
 			(data) =>
 				data.json().then((data) => {
 					try {
-						this.setState({ movies: [...data.results] });
+						this.setState({
+							movies: [...data.results],
+							totalMovies: data.total_results,
+						});
 					} catch (err) {
 						console.log(err);
 					}
@@ -33,12 +40,36 @@ class App extends React.Component {
 		this.setState({ term: e.target.value });
 	};
 
+	onPageChange = (numOfPage) => {
+		fetch(
+			`${this.api_url}?api_key=${this.key}&query=${this.state.term}&page=${numOfPage}`,
+		).then((data) =>
+			data.json().then((data) => {
+				try {
+					this.setState({ movies: [...data.results], currPage: numOfPage });
+				} catch (err) {
+					console.log(err);
+				}
+			}),
+		);
+	};
+
 	render() {
+		const numOfPages = Math.floor(this.state.totalMovies / 20);
 		return (
 			<div className="App">
 				<Nav />
 				<SearchBox handleSubmit={this.onSubmit} handleChange={this.onChange} />
 				<MovieGrid movies={this.state.movies} />
+				{this.state.totalMovies > 20 ? (
+					<Pagination
+						pages={numOfPages}
+						onPageChange={this.onPageChange}
+						currPage={this.currPage}
+					/>
+				) : (
+					""
+				)}
 			</div>
 		);
 	}
