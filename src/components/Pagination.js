@@ -6,7 +6,7 @@ const Pagination = (props) => {
 		//find the "current" page and make sure we highlight it
 		pageLinks.push(
 			<li key={i} onClick={() => props.onPageChange(i)}>
-				{props.currPage == i ? (
+				{props.currPage === i ? (
 					<a className="active" href="#">
 						{i}
 					</a>
